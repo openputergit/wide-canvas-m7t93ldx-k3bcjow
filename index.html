@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Store - Your Software Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .slider {
+            scroll-behavior: smooth;
+        }
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+        .notification-banner {
+            animation: slideIn 0.5s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Banner -->
+    <div class="notification-banner bg-blue-600 text-white text-center py-2 text-sm">
+        Welcome! 10% off is waiting in your cart—on us. 🎉
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <a href="#" class="text-2xl font-bold">DIGITAL<span class="text-blue-600">STORE</span></a>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="#" class="text-gray-600 hover:text-blue-600">Software</a>
+                        <a href="#" class="text-gray-600 hover:text-blue-600">Courses & more</a>
+                        <a href="#" class="text-gray-600 hover:text-blue-600">New arrivals</a>
+                        <a href="#" class="text-gray-600 hover:text-blue-600">Ending soon</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-6">
+                    <div class="relative flex-1 max-w-xl">
+                        <input type="search" placeholder="Search products" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        <button class="absolute right-3 top-2.5 text-gray-400">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Sell on DigitalStore</a>
+                    <button class="bg-yellow-400 hover:bg-yellow-500 px-4 py-2 rounded-lg font-medium">Log in</button>
+                    <div class="relative">
+                        <i class="bi bi-cart text-xl"></i>
+                        <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="text-4xl md:text-6xl font-bold mb-6">
+                        15 years of Digital Store 🎉
+                    </div>
+                    <p class="text-lg mb-8">
+                        15 years. Over 17K+ deals launched. $180M+ paid out to partners. Still the best prices anywhere.
+                        Join our anniversary celebration ft. BIG drops and surprises 👀
+                    </p>
+                    <button class="bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-3 rounded-lg font-medium">
+                        Shop now
+                    </button>
+                </div>
+
+                <!-- Product Slider -->
+                <div class="relative">
+                    <div class="slider flex overflow-x-auto gap-4 pb-4">
+                        <div class="flex-none w-72">
+                            <img src="https://via.placeholder.com/300x200/2563eb/ffffff?text=Product+1" class="rounded-lg shadow-lg w-full" alt="Product 1">
+                        </div>
+                        <div class="flex-none w-72">
+                            <img src="https://via.placeholder.com/300x200/fbbf24/ffffff?text=Product+2" class="rounded-lg shadow-lg w-full" alt="Product 2">
+                        </div>
+                        <div class="flex-none w-72">
+                            <img src="https://via.placeholder.com/300x200/ef4444/ffffff?text=Product+3" class="rounded-lg shadow-lg w-full" alt="Product 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trust Badge -->
+    <div class="container mx-auto px-4 py-8 text-center">
+        <p class="text-gray-600">Helping 1M+ entrepreneurs since 2010</p>
+        <div class="flex justify-center items-center gap-2 mt-2">
+            <div class="flex">
+                <i class="bi bi-star-fill text-green-500"></i>
+                <i class="bi bi-star-fill text-green-500"></i>
+                <i class="bi bi-star-fill text-green-500"></i>
+                <i class="bi bi-star-fill text-green-500"></i>
+                <i class="bi bi-star-fill text-green-500"></i>
+            </div>
+            <span class="text-gray-600">on</span>
+            <img src="https://via.placeholder.com/80x20/ffffff/000000?text=Trustpilot" alt="Trustpilot" class="h-5">
+        </div>
+    </div>
+
+    <script>
+        // Notification Banner Auto-hide
+        setTimeout(() => {
+            const banner = document.querySelector('.notification-banner');
+            banner.style.transform = 'translateY(-100%)';
+            banner.style.transition = 'transform 0.5s ease-out';
+        }, 5000);
+
+        // Search Functionality
+        const searchInput = document.querySelector('input[type="search"]');
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                alert('Search functionality would go here!');
+            }
+        });
+
+        // Cart Functionality
+        const cartButton = document.querySelector('.bi-cart');
+        cartButton.addEventListener('click', () => {
+            alert('Cart functionality would go here!');
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
